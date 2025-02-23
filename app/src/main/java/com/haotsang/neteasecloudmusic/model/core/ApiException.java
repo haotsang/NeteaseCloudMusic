@@ -19,4 +19,7 @@ public class ApiException extends RuntimeException {
         return errorMessage;
     }
 
+    public static ApiException error(int statusCode, String errorMessage) {
+        return new ApiException(statusCode, errorMessage);
+    }
 }

@@ -4,11 +4,20 @@ import com.google.gson.annotations.SerializedName;
 
 public class ApiResponse<T> {
 
-    @SerializedName("code")
+    @SerializedName(
+            value = "code",
+            alternate = {"retCode"}
+    )
     private int code;
-    @SerializedName("message")
+    @SerializedName(
+            value = "message",
+            alternate = {"msg", "reason"}
+    )
     private String message;
-    @SerializedName("result")
+    @SerializedName(
+            value = "result",
+            alternate = {"data"}
+    )
     private T result;
 
     public int getCode() {
